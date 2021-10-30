@@ -1,24 +1,25 @@
-using System;
-using UIKit;
 using Foundation;
+using UIKit;
 
-namespace BasicTable {
-	[Register("AppDelegate")]
+namespace BasicTable
+{
+  [Register(nameof(AppDelegate))]
 	public class AppDelegate : UIApplicationDelegate
 	{
 		protected UIWindow window;
 		protected HomeScreen iPhoneHome;
 		
-		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.MakeKeyAndVisible ();
+			window = new UIWindow(UIScreen.MainScreen.Bounds);
+			window.MakeKeyAndVisible();
 						
 			iPhoneHome = new HomeScreen();
-			iPhoneHome.View.Frame = new CoreGraphics.CGRect(0
-						, UIApplication.SharedApplication.StatusBarFrame.Height
-						, UIScreen.MainScreen.ApplicationFrame.Width
-						, UIScreen.MainScreen.ApplicationFrame.Height);
+			iPhoneHome.View.Frame = new CoreGraphics.CGRect(
+				0,
+				UIApplication.SharedApplication.StatusBarFrame.Height,
+				UIScreen.MainScreen.ApplicationFrame.Width,
+				UIScreen.MainScreen.ApplicationFrame.Height);
 			
 			window.RootViewController = iPhoneHome;
 			
