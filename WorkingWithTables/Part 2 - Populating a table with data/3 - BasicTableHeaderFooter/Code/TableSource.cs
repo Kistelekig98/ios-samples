@@ -27,7 +27,7 @@ namespace BasicTable
 				else
 					indexedTableItems.Add(t.SubHeading, new List<TableItem>() { t });
 			}
-			keys = indexedTableItems.Keys.ToArray ();
+			keys = indexedTableItems.Keys.ToArray();
 		}
 		
 		/// <summary>
@@ -51,7 +51,7 @@ namespace BasicTable
 		/// <summary>
 		/// The string to show in the section footer
 		/// </summary>
-		public override string TitleForFooter (UITableView tableView, nint section)
+		public override string TitleForFooter(UITableView tableView, nint section)
 			=> indexedTableItems[keys[section]].Count + " items";
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -60,10 +60,9 @@ namespace BasicTable
 			okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 			owner.PresentViewController (okAlertController, true, null);
 
-			tableView.DeselectRow (indexPath, true);
+			tableView.DeselectRow(indexPath, true);
 		}
-			
-		
+					
 		/// <summary>
 		/// Called by the TableView to get the actual UITableViewCell to render for the particular section and row
 		/// </summary>
